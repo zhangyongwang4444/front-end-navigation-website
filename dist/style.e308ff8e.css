@@ -31,13 +31,13 @@ body {
     background: #eee;
 }
 
-.globalHeader {
+.searchForm {
     margin: 20px;
     display: flex;
     justify-content: space-between
 }
 
-.globalHeader>input {
+.searchForm>input {
     width: 100%;
     margin-right: 10px;
     height: 40px;
@@ -46,7 +46,7 @@ body {
     border-radius: 4px;
 }
 
-.globalHeader>button {
+.searchForm>button {
     white-space: nowrap;
     padding: 0 28px;
     border: none;
