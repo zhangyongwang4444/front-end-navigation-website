@@ -1,0 +1,117 @@
+/*css reset*/
+* {
+    box-sizing: border-box;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+.icon {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+}
+
+/* styles */
+body {
+    background: #eee;
+}
+
+.globalHeader {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between
+}
+
+.globalHeader>input {
+    width: 100%;
+    margin-right: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.globalHeader>button {
+    white-space: nowrap;
+    padding: 0 28px;
+    border: none;
+    border-radius: 4px;
+    background: #64B5FF;
+    color: #fff;
+    font-size: 18px;
+}
+
+.globalMain {}
+
+.siteList {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.siteList>li,
+.siteList .addButton {
+    margin-bottom: 10px;
+}
+
+.siteList .site,
+.siteList .site-add {
+    background: #fff;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 0;
+}
+
+.siteList .site>.logo {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+}
+
+.siteList .site>.link {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+
+.siteList .addButton .icon {
+    width: 64px;
+    height: 64px;
+}
+
+.siteList .addButton .icon-wrapper {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.siteList .addButton .text {
+    font-size: 14px;
+    margin-top: 4px;
+}
