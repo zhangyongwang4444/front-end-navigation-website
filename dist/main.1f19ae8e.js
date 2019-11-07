@@ -119,10 +119,14 @@ var hashMap = xObject || [{
   url: 'https://www.bilibili.com'
 }];
 
+var simplifyUrl = function simplifyUrl(url) {
+  return url.replace('https://', '').replace('http://', '').replace('www.', '');
+};
+
 var render = function render() {
   $siteList.find('li:not(.addButton)').remove();
   hashMap.forEach(function (node) {
-    var $li = $("\n            <li>\n                <a href=\"".concat(node.url, "\">\n                    <div class=\"site\">\n                        <div class=\"logo\">").concat(node.logo[0], "</div>\n                        <div class=\"link\">").concat(node.url, "</div>\n                    </div>\n                </a>\n            </li>")).insertBefore($lastLi);
+    var $li = $("\n            <li>\n                <a href=\"".concat(node.url, "\">\n                    <div class=\"site\">\n                        <div class=\"logo\">").concat(node.logo[0], "</div>\n                        <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n                    </div>\n                </a>\n            </li>")).insertBefore($lastLi);
   });
 };
 
@@ -174,7 +178,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49331" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59469" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
