@@ -105,7 +105,18 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+$('.addButton').on('click', function () {
+  var url = window.prompt('请问你要添加的网址是啥？');
 
+  if (url.indexOf('http') !== 0) {
+    url = 'https://' + url;
+  }
+
+  console.log(url);
+  var $siteList = $('.siteList');
+  var $lastLi = $siteList.find('li.addButton');
+  var $li = $("\n        <li>\n            <a href=\"".concat(url, "\">\n                <div class=\"site\">\n                    <div class=\"logo\">").concat(url[0], "</div>\n                    <div class=\"link\">").concat(url, "</div>\n                </div>\n            </a>\n        </li>")).insertBefore($lastLi);
+});
 },{}],"C:/Users/34936/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -133,7 +144,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51348" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49331" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
@@ -276,3 +287,4 @@ function hmrAccept(bundle, id) {
   });
 }
 },{}]},{},["C:/Users/34936/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","main.js"], null)
+//# sourceMappingURL=/main.1f19ae8e.map
