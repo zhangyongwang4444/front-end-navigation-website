@@ -119,6 +119,7 @@ body {
     border-radius: 4px;
     padding: 10px 0;
     position: relative;
+    cursor: pointer;
 }
 
 .siteList .site-add {
@@ -152,8 +153,13 @@ body {
     position: absolute;
     top: 4px;
     right: 6px;
+    display: none;
+    cursor: default;
 }
 
+.siteList .site:hover > .close {
+    display: block;
+}
 
 .siteList .addButton .icon {
     width: 64px;
