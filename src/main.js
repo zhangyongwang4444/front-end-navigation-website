@@ -11,7 +11,7 @@ const simplifyUrl = (url) => {
     return url.replace('https://', '')
         .replace('http://', '')
         .replace('www.', '')
-        .replace(/\/.*/,'') //删除 / 开头的内容
+        .replace(/\/.*/, '') //删除 / 开头的内容
 };
 const render = () => {
     $siteList.find('li:not(.addButton)').remove();
@@ -22,6 +22,11 @@ const render = () => {
                     <div class="site">
                         <div class="logo">${node.logo}</div>
                         <div class="link">${simplifyUrl(node.url)}</div>
+                        <div class="close">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-close"></use>
+                            </svg>
+                        </div>
                     </div>
                 </a>
             </li>`).insertBefore($lastLi)

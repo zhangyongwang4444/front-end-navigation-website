@@ -80,7 +80,19 @@ body {
     margin-bottom: 10px;
 }
 
-.siteList .site,
+.siteList .site {
+    background: #fff;
+    width: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px 0;
+    position: relative;
+}
+
 .siteList .site-add {
     background: #fff;
     width: 160px;
@@ -106,6 +118,12 @@ body {
 .siteList .site > .link {
     font-size: 14px;
     margin-top: 4px;
+}
+
+.siteList .site > .close {
+    position: absolute;
+    top: 4px;
+    right: 6px;
 }
 
 
