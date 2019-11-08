@@ -116,6 +116,9 @@ var hashMap = xObject || [{
   logo: 'B',
   url: 'https://www.bilibili.com'
 }];
+$('.inputOfHeader').on('keypress', function (e) {
+  e.stopPropagation();
+});
 
 var simplifyUrl = function simplifyUrl(url) {
   return url.replace('https://', '').replace('http://', '').replace('www.', '').replace(/\/.*/, ''); //删除 / 开头的内容

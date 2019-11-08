@@ -6,7 +6,9 @@ const hashMap = xObject || [
     {logo: 'A', url: 'https://www.acfun.cn'},
     {logo: 'B', url: 'https://www.bilibili.com'}
 ];
-
+$('.inputOfHeader').on('keypress', (e) => {
+    e.stopPropagation();
+});
 const simplifyUrl = (url) => {
     return url.replace('https://', '')
         .replace('http://', '')
