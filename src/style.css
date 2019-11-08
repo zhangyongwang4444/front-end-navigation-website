@@ -93,19 +93,26 @@ body {
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
-
+    justify-content: space-between;
 }
 
 @media (min-width: 500px) {
     .siteList {
         margin-left: 0;
         margin-right: -25px;
+        justify-content: flex-start;
     }
 }
 
 .siteList > li {
     margin-bottom: 10px;
-    margin-right: 25px;
+}
+
+@media (min-width: 500px) {
+    .siteList > li {
+        margin-bottom: 10px;
+        margin-right: 25px;
+    }
 }
 
 .siteList .site {
