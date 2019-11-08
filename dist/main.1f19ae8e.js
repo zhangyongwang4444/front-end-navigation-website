@@ -123,8 +123,17 @@ var simplifyUrl = function simplifyUrl(url) {
 
 var render = function render() {
   $siteList.find('li:not(.addButton)').remove();
-  hashMap.forEach(function (node) {
-    var $li = $("\n            <li>\n                <a href=\"".concat(node.url, "\">\n                    <div class=\"site\">\n                        <div class=\"logo\">").concat(node.logo, "</div>\n                        <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n                        <div class=\"close\">\n                            <svg class=\"icon\" aria-hidden=\"true\">\n                                <use xlink:href=\"#icon-close\"></use>\n                            </svg>\n                        </div>\n                    </div>\n                </a>\n            </li>")).insertBefore($lastLi);
+  hashMap.forEach(function (node, index) {
+    var $li = $("\n            <li>\n                <div class=\"site\">\n                    <div class=\"logo\">".concat(node.logo, "</div>\n                    <div class=\"link\">").concat(simplifyUrl(node.url), "</div>\n                    <div class=\"close\">\n                          <svg class=\"icon\" aria-hidden=\"true\">\n                              <use xlink:href=\"#icon-close\"></use>\n                          </svg>\n                    </div>\n                </div>\n            </li>")).insertBefore($lastLi);
+    $li.on('click', function () {
+      window.open(node.url);
+    });
+    $li.on('click', '.close', function (e) {
+      e.stopPropagation(); // 阻止冒泡
+
+      hashMap.splice(index, 1);
+      render();
+    });
   });
 };
 
