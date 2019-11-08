@@ -41,10 +41,27 @@ body {
     background: #eee;
 }
 
-.searchForm {
+.globalHeader {
     margin: 20px;
+}
+
+@media (min-width: 500px) {
+    .globalHeader {
+        margin: 60px 0 100px 0;
+    }
+}
+
+.searchForm {
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+}
+
+@media (min-width: 500px) {
+    .searchForm {
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .searchForm > input {
@@ -67,17 +84,28 @@ body {
 }
 
 .globalMain {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .siteList {
     display: flex;
     flex-wrap: wrap;
     margin: 20px;
-    justify-content: space-between;
+
+}
+
+@media (min-width: 500px) {
+    .siteList {
+        margin-left: 0;
+        margin-right: -25px;
+    }
 }
 
 .siteList > li {
     margin-bottom: 10px;
+    margin-right: 25px;
 }
 
 .siteList .site {
